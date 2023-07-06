@@ -1,0 +1,11 @@
+.imagenesProductos{
+    width: 200px;
+    height: 200px;
+}
+
+.contenedorProducto{
+    border: 3px solid black;
+    border-radius: 25px;
+    height: 400px;
+    width: 300px;
+}

@@ -1,10 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const ItemCount = () => {
+const ItemCount = ({stock}) => {
     const [contador, setContador] = useState(1);
+    const [color, setColor] = useState("black"); 
+
+    useEffect( () => {
+        document.title = `Contador: ${contador}`;
+
+        if(contador > 5){
+            setColor("red");
+        }else{
+            setColor("black");
+        }
+
+    },[contador])
 
     const incrementar = () => {
-        if(contador < 10){ // 10 sería el stock
+        if(contador < stock){ // 10 sería el stock
             setContador(contador + 1);
         }
     }
@@ -15,12 +27,23 @@ const ItemCount = () => {
         }
     }
 
+    const agregarAlCarrito = () => {
+        if(contador == 1){
+            console.log(`Ha agregado 1 item al carrito`);
+        }else{
+            console.log(`Ha agregado ${contador} items al carrito`);
+        }
+        
+    }
+
     return (
-        <>
+        <div>
+            <h4>Contador del producto</h4>
             <button onClick={decrementar}> - </button>
-            <p> {contador} </p>
+            {contador}
             <button onClick={incrementar}> + </button>
-        </>
+            <button onClick={agregarAlCarrito} style={{color: color}}> Agregar al carrito </button>
+        </div>
     )
 }
 
