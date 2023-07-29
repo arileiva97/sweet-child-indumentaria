@@ -1,17 +1,14 @@
-import './Item.css';
-import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
+import './Item.css';
 
-
-const Item = ({id, nombre, precio, imagen}) => { // se recibe cada propiedad de los productos
+const Item = ({id, nombre, precio, imagen, stock}) => { 
     return (
         <div className="contenedorProducto">
             <img className="imagenesProductos" src={imagen} alt={nombre} />
-            <h3>{nombre}</h3>
+            <h4>{nombre}</h4>
             <p>Precio: ${precio}</p>
-            <ItemCount stock={10}/>
+            <p>Stock: {stock} unidades</p>
             <p>ID: {id} <Link to={`/item/${id}`}>Ver detalles</Link></p>
-            
         </div>
     )
 }
