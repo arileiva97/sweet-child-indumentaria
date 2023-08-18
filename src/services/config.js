@@ -3,11 +3,11 @@ import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: "sweet-child-28210.firebaseapp.com",
-  projectId: "sweet-child-28210",
-  storageBucket: "sweet-child-28210.appspot.com",
-  messagingSenderId: "195175109578",
-  appId: "1:195175109578:web:f5c8bb7887633b73a77533"
+  authDomain: "sweet-child-base.firebaseapp.com",
+  projectId: "sweet-child-base",
+  storageBucket: "sweet-child-base.appspot.com",
+  messagingSenderId: "819272676785",
+  appId: "1:819272676785:web:b2022e838e220872dbb990"
 };
 
 const app = initializeApp(firebaseConfig);
